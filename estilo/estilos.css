@@ -1,0 +1,101 @@
+.padre {
+    padding: 20px;
+    background-color: #f0f8ff;
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;  /* El carrusel es más grande que el acordeón y la tarjeta */
+    grid-gap: 20px;
+    grid-template-areas:
+        "head head head"
+        "nav nav nav"
+        "c1 c2 c3"  /* Todos en la misma fila */
+        "foot foot foot";
+}
+
+.padre .head {
+    grid-area: head;
+    background-image: linear-gradient(to right, rgb(0, 238, 255) , rgb(0, 110, 255));
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.padre .nav {
+    grid-area: nav;
+    background-color: #f1fff7;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.padre .c1 {
+    text-align: center;
+    grid-area: c1;
+    background-color: #f5fafa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.c1 .carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.c1 .carousel-control-prev, .c1 .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+.c1 .carousel-control-prev {
+    left: 0;
+}
+
+.c1 .carousel-control-next {
+    right: 0;
+}
+
+.c1 .carousel-control-prev-icon,
+.c1 .carousel-control-next-icon {
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.padre .c2 {
+    text-align: center;
+    grid-area: c2;
+    background-color: #a5d3ee;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.padre .c3 {
+    text-align: center;
+    grid-area: c3;
+    background-color: #e5d0f8;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.padre .foot {
+    grid-area: foot;
+    background-color: #f4f6f7;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.carousel-item video {
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Fill the height of the carousel */
+    max-width: 100%; /* Ensure it does not exceed the width */
+}
